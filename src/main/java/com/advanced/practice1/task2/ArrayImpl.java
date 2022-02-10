@@ -1,6 +1,5 @@
 package com.advanced.practice1.task2;
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -81,7 +80,17 @@ public class ArrayImpl implements Array {
 
     @Override
     public String toString() {
-        return Arrays.toString(objects);
+        String str = "[";
+        for (var object: objects) {
+            str += object + ", ";
+        }
+
+        if (str.contains(", ")) {
+            str = str.substring(0, str.length() - 2);
+        }
+
+        str += "]";
+        return str;
     }
 
     @Override

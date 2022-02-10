@@ -11,21 +11,32 @@ public class ArrayImpl implements Array {
 
     @Override
     public void add(Object element) {
-        objects = Arrays.copyOf(objects, objects.length + 1);
+        Object[] temp = objects;
+        objects = new Object[temp.length + 1];
+        for (int i = 0; i < temp.length; i++) {
+            objects[i] = temp[i];
+        }
+
         objects[objects.length - 1] = element;
+
     }
 
     @Override
     public void set(int index, Object element) {
         if (index >= objects.length || index < 0) throw new IndexOutOfBoundsException();
-        Object[] temp = Arrays.copyOfRange(objects, index, objects.length);
-        int count = 0;
-        objects[index] = element;
-        objects = Arrays.copyOf(objects, objects.length + 1);
 
-        for (int i = index + 1; i < objects.length; i++) {
-            objects[i] = temp[count++];
+        Object[] temp = objects;
+        objects = new Object[temp.length + 1];
+
+        for (int i = 0; i < index; i++) {
+            objects[i] = temp[i];
         }
+
+        for (int i = index; i < temp.length; i++) {
+            objects[i + 1] = temp[i];
+        }
+
+        objects[index] = element;
     }
 
     @Override
@@ -51,7 +62,11 @@ public class ArrayImpl implements Array {
             objects[i] = objects[i + 1];
         }
 
-        objects = Arrays.copyOf(objects, objects.length - 1);
+        Object[] temp = objects;
+        objects = new Object[temp.length - 1];
+        for (int i = 0; i < objects.length; i++) {
+            objects[i] = temp[i];
+        }
     }
 
     @Override

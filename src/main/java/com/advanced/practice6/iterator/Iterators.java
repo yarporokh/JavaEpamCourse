@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.IntStream;
 
-class Iterators {
+public class Iterators {
 
     public static Iterator<Integer> intArrayTwoTimesIterator(int[] array) {
         return Arrays.stream(array).flatMap(value -> IntStream.of(value, value)).iterator();

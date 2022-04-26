@@ -1,6 +1,6 @@
 package com.advanced.practice6.factory.plot;
 
-class PlotFactories {
+public class PlotFactories {
 
     public PlotFactory classicDisneyPlotFactory(Character hero, Character beloved, Character villain) {
         throw new UnsupportedOperationException();

@@ -51,7 +51,7 @@ public class PlotFactoriesTest {
         );
     }
 
-    @Test
+/*    @Test
     public void marvelPlotFactory() {
         PlotFactory ironManPlotFactory = factories.marvelPlotFactory(
                 new Character[]{() -> "Iron Man"},
@@ -78,5 +78,5 @@ public class PlotFactoriesTest {
                 "Kree Invasion threatens the world. But brave Star-Lord, brave Gamora, brave Drax, brave Groot, brave Rocket on guard. So, no way that intrigues of Ronan the Accuser overcome the willpower of inflexible heroes",
                 guardiansOfTheGalaxyPlotFactory.plot().toString()
         );
-    }
+    }*/
 }
